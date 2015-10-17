@@ -5,7 +5,7 @@
  *
  */
 require_once '../../../init.php';
-require_once 'vendor/Mollie/API/Autoloader.php';
+require_once 'vendor/Mollie/src/Mollie/API/Autoloader.php';
 
 $whmcs->load_function('gateway');
 $whmcs->load_function('invoice');

@@ -1,0 +1,3 @@
+[submodule "src/mollie/vendor/Mollie"]
+	path = src/mollie/vendor/Mollie
+	url = git@github.com:mollie/mollie-api-php.git

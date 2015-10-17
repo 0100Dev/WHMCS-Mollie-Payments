@@ -1,6 +1,6 @@
 <?php
 
-require_once 'vendor/Mollie/API/Autoloader.php';
+require_once 'vendor/Mollie/src/Mollie/API/Autoloader.php';
 
 function mollie_config() {
     return array(
