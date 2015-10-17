@@ -21,7 +21,7 @@ if(isset($_POST['id'])) {
     $transactionQuery = select_query('gateway_mollie', '', array('paymentid' => $_POST['id']), null, null, 1);
 
     if (mysql_num_rows($transactionQuery) != 1) {
-        logTransaction($_GATEWAY['paymentmethod'], $_POST, 'Callback - Failure 2 (Transaction not found)');
+        logTransaction('mollieunknown', $_POST, 'Callback - Failure 2 (Transaction not found)');
 
         header('HTTP/1.1 500 Transaction not found');
         exit();
