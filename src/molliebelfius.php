@@ -1,6 +1,6 @@
 <?php
 
-require_once 'mollie/mollie.php';
+require_once __DIR__ . '/mollie/mollie.php';
 
 function molliebelfius_config() {
 	$config = mollie_config();
