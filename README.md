@@ -6,8 +6,7 @@
 Alle betaalmethodes van Mollie zijn ondersteund. Zet de gewenste betaalmethodes aan door de gateway in WHMCS te activeren.
 
 # Support #
-W: 0100dev.nl  
-E: support@0100dev.nl
+Support alleen in Github via haar issuetracker.
 
 [Meer informatie via Mollie](https://www.mollie.nl/betaaldiensten/)
 
