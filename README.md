@@ -1,6 +1,6 @@
 # Installatie #
-+ ``` git clone --recursive git://github.com/0100Dev/WHMCS-Mollie.git ~/whmcs```
-+ Kopieer alle bestanden en mappen uit de `src` folder in `/modules/gateways/`
++ Ga naar de root van de WHMCS installatie (de hoofd folder) en voer het onderstaande commando uit.
++ ``` git clone --recursive https://github.com/0100Dev/WHMCS-Mollie.git /tmp/whmcs && sudo mv /tmp/whmcs/src ./modules/gateways/```
 
 # Ondersteunde betaalmethodes #
 Alle betaalmethodes van Mollie zijn ondersteund. Zet de gewenste betaalmethodes aan door de gateway in WHMCS te activeren.
