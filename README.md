@@ -5,7 +5,7 @@
 
 # Installatie via FTP #
 + Log in op FTP.
-+ Download de `whmcs-mollie.tar.gz` van onze [releases pagina](https://github.com/0100Dev/WHMCS-Mollie/releases).
++ Download de `whmcs-mollie.tar.gz` van onze [releases pagina](https://github.com/0100Dev/WHMCS-Mollie/releases) (**LET OP:** **niet** `Source code (zip)` of `Source code (tar.gz)`!).
 + Upload alles uit de `src` folder uit de hierboven gedownloaden TAR in de `/modules/gateways` folder van uw WHMCS installatie.
 
 # Ondersteunde betaalmethodes #
