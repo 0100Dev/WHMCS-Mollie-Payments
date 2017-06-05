@@ -66,7 +66,7 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL) {
             header('location: ' . $params['returnurl'] . '&paymentfailed=true');
             exit();
         } else {
-            return '<br/><img src="' . $params['systemurl'] . '/modules/gateways/mollie/ajax_loader.gif" /><br/>' . $_GATEWAYLANG['checkPayment'] . ' <script> window.onload = function(){ setTimeout("location.reload(true);", 2000); } </script>';
+            return '<br/><img src="' . $params['systemurl'] . 'modules/gateways/mollie/ajax_loader.gif" /><br/>' . $_GATEWAYLANG['checkPayment'] . ' <script> window.onload = function(){ setTimeout("location.reload(true);", 2000); } </script>';
         }
     } else {
         if (isset($_POST['start']) || (isset($_GET['a']) && $_GET['a'] == 'complete') || (isset($_GET['action']) && ($_GET['action'] == 'addfunds' || $_GET['action'] == 'masspay') && isset($_POST['paymentmethod']) && $_POST['paymentmethod'] == 'mollie' . $method)) {
@@ -88,7 +88,7 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL) {
                 'method' => $method,
                 'description' => $params['description'],
                 'redirectUrl' => $params['returnurl'] . '&check_payment=' . $transactionId,
-                'webhookUrl' => $params['systemurl'] . '/modules/gateways/mollie/callback.php',
+                'webhookUrl' => $params['systemurl'] . 'modules/gateways/mollie/callback.php',
                 'metadata' => array(
                     'invoice_id' => $params['invoiceid'],
                 ),
