@@ -21,5 +21,3 @@ Alle betaalmethodes van Mollie zijn ondersteund. Zet de gewenste betaalmethodes 
 Support alleen in Github via haar issuetracker.
 
 [Meer informatie via Mollie](https://www.mollie.nl/betaaldiensten/)
-
-![Powerd By Mollie](http://www.mollie.nl/images/badge-betaling-medium.png)
