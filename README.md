@@ -1,7 +1,7 @@
 # WHMCS Mollie Gateway
 Onofficiële Mollie gateway voor WHMCS.
 
-Compatible met WHMCS **7.3.0**.
+Compatible met **alle** WHMCS versies.
 
 ### Installatie via SSH
 + Log in op SSH (of console) en zorg dat GIT geinstalleerd is op uw webserver.
@@ -16,6 +16,11 @@ Compatible met WHMCS **7.3.0**.
 
 ### Betaalmethodes
 Alle betaalmethodes van Mollie zijn ondersteund. Zet de gewenste betaalmethodes aan door de gateway in WHMCS te activeren.
+
+### Updates
+
+#### V1.0 naar V1.1
+In deze release is een conflict met WHMCS haar Mollie iDeal gateway opgelost. Hierdoor moet je de Mollie IDeal gateway van ons weer opnieuw activeren.
 
 ### Support
 Support alleen in Github via haar issuetracker.
