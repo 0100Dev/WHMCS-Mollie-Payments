@@ -29,7 +29,7 @@ if(isset($_POST['id'])) {
 
     $transaction = mysql_fetch_assoc($transactionQuery);
 
-    $_GATEWAY = getGatewayVariables('mollie' . $transaction['method']);
+    $_GATEWAY = getGatewayVariables('mollie' . $transaction['method'] . '_devapp');
 
     if ($transaction['status'] != 'open') {
         logTransaction($_GATEWAY['paymentmethod'], array_merge($transaction, $_POST), 'Callback - Failure 3 (Transaction not open)');
