@@ -12,7 +12,6 @@ Compatible met **alle** WHMCS versies.
 + Log in op FTP.
 + Download de `whmcs-mollie.tar.gz` van onze [releases pagina](https://github.com/0100Dev/WHMCS-Mollie/releases) (**LET OP:** **niet** `Source code (zip)` of `Source code (tar.gz)`!).
 + Upload alles uit de `src` folder uit de hierboven gedownloaden TAR in de `/modules/gateways` folder van uw WHMCS installatie.
-+ Opmerking: mollieideal.php van deze module moet de originele van WHMCS overschrijven. Het is tot nu toe nog niet mogelijk om het bestand een andere naam te geven dankzij WHMCS naamgevingen en interne namen.
 
 ### Betaalmethodes
 Alle betaalmethodes van Mollie zijn ondersteund. Zet de gewenste betaalmethodes aan door de gateway in WHMCS te activeren.
