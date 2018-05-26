@@ -19,8 +19,10 @@ Alle betaalmethodes van Mollie zijn ondersteund. Zet de gewenste betaalmethodes 
 
 ### Updates
 
-#### V1.0 naar V1.1
-In deze release is een conflict met WHMCS haar Mollie iDeal gateway opgelost. Hierdoor moet je de Mollie IDeal gateway van ons weer opnieuw activeren.
+#### V1.0 naar V2.0
+Deze release is NIET compatible met V1.x. Verwijder eerst alle files vanuit je /modules/gateways folder die betrekking hebben op deze gateway. Alles dus met mollie_x.php. In WHMCS dien je ook opnieuw deze gateways in te schakelen. WHMCS zal aangeven dat de ouded gateways niet meer gevonden kunnen worden, dit klopt - verwijder deze en vervang deze met de nieuw ingeschakelde.
+
+Let erop dat je bijvoorbeeld NIET onze mollierecurring.php moet verwijderen, als je onze betaalde Mollie Recurring gateway actief hebt.
 
 ### Support
 Support alleen in Github via haar issuetracker.
