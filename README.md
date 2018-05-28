@@ -1,5 +1,5 @@
 # WHMCS Mollie Gateway
-Onofficiële Mollie gateway voor WHMCS.
+Onofficiële Mollie gateway voor WHMCS. In deze gratis plugin zit GEEN ondersteuning voor Mollie Recurring (SEPA/Automatisch Incasso). Hiervoor hebben we een [betaalde](https://0100dev.nl/modules/whmcs#WHMCS%20Mollie%20Recurring) plugin. Deze plugins zijn niet afhankelijk van elkaar en kunnen naast elkaar opereren maar ook zonder elkaar.
 
 Compatible met **alle** WHMCS versies.
 
