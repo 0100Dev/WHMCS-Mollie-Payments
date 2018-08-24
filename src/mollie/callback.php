@@ -29,7 +29,13 @@ if(isset($_POST['id'])) {
 
     $transaction = mysql_fetch_assoc($transactionQuery);
 
-    $_GATEWAY = getGatewayVariables('mollie' . $transaction['method'] . '_devapp');
+    $method = $transaction['method'];
+
+    if ($method === Mollie_API_Object_Method::MISTERCASH) {
+        $method = 'bancontact';
+    }
+
+    $_GATEWAY = getGatewayVariables('mollie' . $method . '_devapp');
 
     if ($transaction['status'] != 'open') {
         logTransaction($_GATEWAY['paymentmethod'], array_merge($transaction, $_POST), 'Callback - Failure 3 (Transaction not open)');
