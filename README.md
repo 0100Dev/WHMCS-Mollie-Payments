@@ -24,6 +24,6 @@ Deze release is NIET compatible met V1.x. Verwijder eerst alle files vanuit je /
 Let erop dat je bijvoorbeeld NIET onze mollierecurring.php moet verwijderen, als je onze betaalde Mollie Recurring gateway actief hebt.
 
 ### Support
-Support op basis van best-effort in Github via haar issuetracker. Bbusiness support (reactietijd van max. 24 uur, normaliter <1 uur) via ons [klantenpaneel](https://my.0100dev.nl/) tegen ons uurtarief a € 45,- excl. VAT. Maak een account aan en stuur via daar een ticket in.
+Support op basis van best-effort in Github via haar issuetracker. Business support (reactietijd van max. 24 uur, normaliter <1 uur) via ons [klantenpaneel](https://my.0100dev.nl/) tegen ons uurtarief a € 45,- excl. VAT. Maak een account aan en stuur via daar een ticket in.
 
 [Meer informatie via Mollie](https://www.mollie.nl/betaaldiensten/)
