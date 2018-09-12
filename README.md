@@ -5,8 +5,13 @@ Compatible met **alle** WHMCS versies.
 
 ### Installatie via SSH
 + Log in op SSH (of console) en zorg dat GIT geinstalleerd is op uw webserver.
-+ Ga naar de root van de WHMCS installatie (de hoofd folder) en voer het onderstaande commando uit.
-+ ``` git clone --recursive https://github.com/0100Dev/WHMCS-Mollie.git /tmp/whmcs && sudo cp /tmp/whmcs/src ./modules/gateways/```
++ Ga naar een tijdelijke folder (bijvoorbeeld `/tmp`) en voer het onderstaande commando uit.
++ ``` git clone https://github.com/0100Dev/WHMCS-Mollie.git```
++ Ga in de `WHMCS-Mollie` folder die zojuist met het vorige commando aangemaakt is.
++ Installeer Composer op de webserver of volg de instructies [hier](https://getcomposer.org/download/) en voer daarna het onderstaande commando uit.
++ ```composer install```
++ Ga naar de root van de WHMCS installatie (de hoofd folder) en dan naar `modules/gateways`.
++ Kopieer nu alles uit de `WHMCS-Mollie/src` folder van enkele stappen terug naar de huidige folder.
 
 ### Installatie via FTP
 + Log in op FTP.
