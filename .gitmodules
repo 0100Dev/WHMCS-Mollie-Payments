@@ -1,3 +1,0 @@
-[submodule "src/mollie/vendor/Mollie"]
-	path = src/mollie/vendor/Mollie
-	url = https://github.com/mollie/mollie-api-php.git

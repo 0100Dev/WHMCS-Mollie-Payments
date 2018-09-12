@@ -1,28 +1,30 @@
 <?php
 
-require_once __DIR__ . '/vendor/Mollie/src/Mollie/API/Autoloader.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-function mollie_config() {
+function mollie_config()
+{
     return array(
         'key' => array(
             'FriendlyName' => 'API key',
             'Type' => 'text',
             'Size' => '35',
-            'Description' => 'Your channel\'s API key.'
+            'Description' => 'Your channels API key.'
         )
     );
 }
 
-function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL) {
+function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
+{
     global $whmcs;
 
     /**
      *
-     *	Setting requirements and includes
+     *    Setting requirements and includes
      *
      */
-    if(substr($params['returnurl'], 0, 1) == '/')
-        $params['returnurl'] = $params['systemurl'].$params['returnurl'];
+    if (substr($params['returnurl'], 0, 1) == '/')
+        $params['returnurl'] = $params['systemurl'] . $params['returnurl'];
 
     if (empty($params['language']))
         $params['language'] = ((isset($_SESSION['language'])) ? $_SESSION['language'] : $whmcs->get_config('Language'));
@@ -42,12 +44,12 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL) {
         full_query('CREATE TABLE IF NOT EXISTS `gateway_mollie` (`id` int(11) NOT NULL AUTO_INCREMENT, `paymentid` varchar(15), `amount` double NOT NULL, `currencyid` int(11) NOT NULL, `ip` varchar(50) NOT NULL, `userid` int(11) NOT NULL, `invoiceid` int(11) NOT NULL, `status` ENUM(\'open\',\'paid\',\'closed\') NOT NULL DEFAULT \'open\', `method` VARCHAR(25) NOT NULL,  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, `updated` timestamp NULL DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `paymentid` (`paymentid`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;');
     }
 
-    $mollie = new Mollie_API_Client;
+    $mollie = new \Mollie\Api\MollieApiClient();
     $mollie->setApiKey($params['key']);
 
     /**
      *
-     *	Check if good state to open transaction.
+     *    Check if good state to open transaction.
      *
      */
     if (isset($_GET['check_payment']) && ctype_digit($_GET['check_payment'])) {
@@ -84,7 +86,10 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL) {
             ));
 
             $payment = $mollie->payments->create(array(
-                'amount' => $params['amount'],
+                'amount' => [
+                    'value' => $params['amount'],
+                    'currency' => $params['currency'],
+                ],
                 'method' => $method,
                 'description' => $params['description'],
                 'redirectUrl' => $params['returnurl'] . '&check_payment=' . $transactionId,
@@ -97,19 +102,19 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL) {
 
             update_query('gateway_mollie', array('paymentid' => $payment->id), array('id' => $transactionId));
 
-            header('Location: ' . $payment->getPaymentUrl());
+            header('Location: ' . $payment->getCheckoutUrl());
             exit();
         } else {
             $return = '<form action="" method="POST">';
 
-            if ($method == Mollie_API_Object_Method::IDEAL) {
+            if ($method == \Mollie\Api\Types\PaymentMethod::IDEAL) {
                 $issuers = $mollie->issuers->all();
 
                 $return .= '<label for="issuer">' . $_GATEWAYLANG['selectBank'] . ':</label> ';
 
                 $return .= '<select name="issuer">';
                 foreach ($issuers as $issuer) {
-                    if ($issuer->method == Mollie_API_Object_Method::IDEAL) {
+                    if ($issuer->method == \Mollie\Api\Types\PaymentMethod::IDEAL) {
                         $return .= '<option value=' . htmlspecialchars($issuer->id) . '>' . htmlspecialchars($issuer->name) . '</option>';
                     }
                 }

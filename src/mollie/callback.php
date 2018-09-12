@@ -1,21 +1,21 @@
 <?php
 /**
  *
- *	Setting requirements and includes
+ *    Setting requirements and includes
  *
  */
 require_once __DIR__ . '/../../../init.php';
-require_once __DIR__ . '/vendor/Mollie/src/Mollie/API/Autoloader.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 $whmcs->load_function('gateway');
 $whmcs->load_function('invoice');
 
 /**
  *
- *	Check parameters
+ *    Check parameters
  *
  */
-if(isset($_POST['id'])) {
+if (isset($_POST['id'])) {
 
     // Get transaction
     $transactionQuery = select_query('gateway_mollie', '', array('paymentid' => $_POST['id']), null, null, 1);
@@ -31,9 +31,6 @@ if(isset($_POST['id'])) {
 
     $method = $transaction['method'];
 
-    if ($method === Mollie_API_Object_Method::MISTERCASH) {
-        $method = 'bancontact';
-    }
 
     $_GATEWAY = getGatewayVariables('mollie' . $method . '_devapp');
 
@@ -50,12 +47,12 @@ if(isset($_POST['id'])) {
     $transactionCurrency = mysql_fetch_assoc($transactionCurrency);
 
     // Check payment
-    $mollie = new Mollie_API_Client;
+    $mollie = new \Mollie\Api\MollieApiClient();
     $mollie->setApiKey($_GATEWAY['key']);
 
-    $payment  = $mollie->payments->get($_POST['id']);
+    $payment = $mollie->payments->get($_POST['id']);
 
-    if($payment->isPaid()) {
+    if ($payment->isPaid()) {
 
         // Add conversion, when there is need to. WHMCS only supports currencies per user. WHY?!
         if ($transactionCurrency['id'] != $userCurrency['id']) {
@@ -89,7 +86,7 @@ if(isset($_POST['id'])) {
         header('HTTP/1.1 500 Payment not open or paid');
         exit();
     }
-}else{
+} else {
     logTransaction('mollieunknown', $_POST, 'Callback - Failure 0 (Arg mismatch)');
 
     header('HTTP/1.1 500 Arg mismatch');
