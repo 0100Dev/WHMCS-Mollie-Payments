@@ -108,15 +108,13 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
             $return = '<form action="" method="POST">';
 
             if ($method == \Mollie\Api\Types\PaymentMethod::IDEAL) {
-                $issuers = $mollie->issuers->all();
+                $issuers = $mollie->methods->get('ideal', ['include' => 'issuers'])->issuers;
 
                 $return .= '<label for="issuer">' . $_GATEWAYLANG['selectBank'] . ':</label> ';
 
                 $return .= '<select name="issuer">';
                 foreach ($issuers as $issuer) {
-                    if ($issuer->method == \Mollie\Api\Types\PaymentMethod::IDEAL) {
-                        $return .= '<option value=' . htmlspecialchars($issuer->id) . '>' . htmlspecialchars($issuer->name) . '</option>';
-                    }
+                    $return .= '<option value=' . htmlspecialchars($issuer->id) . '>' . htmlspecialchars($issuer->name) . '</option>';
                 }
                 $return .= '</select>';
             }
