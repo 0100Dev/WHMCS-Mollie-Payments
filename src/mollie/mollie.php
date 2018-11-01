@@ -30,10 +30,10 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
         $params['language'] = ((isset($_SESSION['language'])) ? $_SESSION['language'] : $whmcs->get_config('Language'));
 
     if (empty($params['language']))
-        $params['language'] = 'english';
+        $params['language'] = 'English';
 
     if (!file_exists(__DIR__ . '/lang/' . $params['language'] . '.php'))
-        $params['language'] = 'english';
+        $params['language'] = 'English';
 
     /* @var array $_GATEWAYLANG */
     require __DIR__ . '/lang/' . $params['language'] . '.php';
