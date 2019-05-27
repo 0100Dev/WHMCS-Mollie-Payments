@@ -247,16 +247,16 @@
         },
         {
             "name": "mollie/mollie-api-php",
-            "version": "v2.8.3",
+            "version": "v2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mollie/mollie-api-php.git",
-                "reference": "df6e0cea662f3c9603f245816cc2982e8ae49bcf"
+                "reference": "151bdb85c325f6768452a3d8461930589be85729"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mollie/mollie-api-php/zipball/df6e0cea662f3c9603f245816cc2982e8ae49bcf",
-                "reference": "df6e0cea662f3c9603f245816cc2982e8ae49bcf",
+                "url": "https://api.github.com/repos/mollie/mollie-api-php/zipball/151bdb85c325f6768452a3d8461930589be85729",
+                "reference": "151bdb85c325f6768452a3d8461930589be85729",
                 "shasum": ""
             },
             "require": {
@@ -294,12 +294,12 @@
             "homepage": "https://www.mollie.com/en/developers",
             "keywords": [
                 "CBC",
+                "Przelewy24",
                 "api",
                 "bancontact",
                 "banktransfer",
                 "belfius",
                 "belfius direct net",
-                "bitcoin",
                 "charges",
                 "creditcard",
                 "direct debit",
@@ -328,7 +328,7 @@
                 "sofortbanking",
                 "subscriptions"
             ],
-            "time": "2019-04-11T12:19:05+00:00"
+            "time": "2019-05-20T09:07:29+00:00"
         },
         {
             "name": "psr/http-message",

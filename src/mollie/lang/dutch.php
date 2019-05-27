@@ -10,7 +10,6 @@ $_GATEWAYLANG['checkPayment'] = 'We controleren je betaling, moment geduld...';
 
 $_GATEWAYLANG['payWithBanktransfer'] = 'Betaal met Bank overschrijving';
 $_GATEWAYLANG['payWithBelfius'] = 'Betaal met Belfius';
-$_GATEWAYLANG['payWithBitcoin'] = 'Betaal met Bitcoin';
 $_GATEWAYLANG['payWithCreditcard'] = 'Betaal met Creditcard';
 $_GATEWAYLANG['payWithIdeal'] = 'Betaal met iDeal';
 $_GATEWAYLANG['payWithBancontact'] = 'Betaal met Bancontact';

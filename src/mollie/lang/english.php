@@ -3,7 +3,6 @@
 $_GATEWAYLANG = array();
 
 $_GATEWAYLANG['selectBank'] = 'Select bank';
-$_GATEWAYLANG['selectLater'] = 'Select later';
 
 $_GATEWAYLANG['errorTransactionNotFound'] = 'Transaction is not found. Please try again.';
 
@@ -11,7 +10,6 @@ $_GATEWAYLANG['checkPayment'] = 'Checking your payment, please wait...';
 
 $_GATEWAYLANG['payWithBanktransfer'] = 'Pay with Bank Transfer';
 $_GATEWAYLANG['payWithBelfius'] = 'Pay with Belfius';
-$_GATEWAYLANG['payWithBitcoin'] = 'Pay with Bitcoin';
 $_GATEWAYLANG['payWithCreditcard'] = 'Pay with Credit Card';
 $_GATEWAYLANG['payWithIdeal'] = 'Pay with iDeal';
 $_GATEWAYLANG['payWithBancontact'] = 'Pay with Bancontact';
