@@ -21,3 +21,5 @@ $_GATEWAYLANG['payWithGiftcard'] = 'Betaal met een cadeaukaart';
 $_GATEWAYLANG['payWithGiropay'] = 'Betaal met Giropay';
 $_GATEWAYLANG['payWithInghomepay'] = 'Betaal met ING Home\'Pay';
 $_GATEWAYLANG['payWithKbc'] = 'Betaal met KBC/CBC-betaalknop';
+$_GATEWAYLANG['payWithPrzelewy24'] = 'Betaal met Przelewy24';
+$_GATEWAYLANG['payWithApplepay'] = 'Betaal met Apple Pay';
