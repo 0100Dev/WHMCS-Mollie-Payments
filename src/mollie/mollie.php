@@ -105,7 +105,7 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
             header('Location: ' . $payment->getCheckoutUrl());
             exit();
         } else {
-            $return = '<form action="" method="POST">';
+            $return = '<form action="' . $params['systemurl'] . '/viewinvoice.php?id=' . $params['invoiceid'] . '" method="POST">';
 
             if ($method == \Mollie\Api\Types\PaymentMethod::IDEAL) {
                 $issuers = $mollie->methods->get('ideal', ['include' => 'issuers'])->issuers;
