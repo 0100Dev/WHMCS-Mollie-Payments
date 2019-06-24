@@ -93,7 +93,7 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
                 'method' => $method,
                 'description' => $params['description'],
                 'redirectUrl' => $params['returnurl'] . '&check_payment=' . $transactionId,
-                'webhookUrl' => $params['systemurl'] . 'modules/gateways/mollie/callback.php',
+                'webhookUrl' => $params['systemurl'] . '/modules/gateways/mollie/callback.php',
                 'metadata' => array(
                     'invoice_id' => $params['invoiceid'],
                 ),
