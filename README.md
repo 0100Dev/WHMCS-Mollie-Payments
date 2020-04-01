@@ -1,5 +1,5 @@
-# WHMCS Mollie Gateway
-Onofficiële Mollie gateway voor WHMCS. In deze gratis plugin zit GEEN ondersteuning voor Mollie Recurring (SEPA/Automatisch Incasso). Hiervoor hebben we een [betaalde](https://0100dev.nl/modules/whmcs#WHMCS%20Mollie%20Recurring) plugin. Deze plugins zijn niet afhankelijk van elkaar en kunnen naast elkaar opereren maar ook zonder elkaar.
+# WHMCS Mollie Payments gateway
+Onofficiële Mollie Payments gateway voor WHMCS. In deze gratis plugin zit GEEN ondersteuning voor Mollie Recurring (SEPA/Automatisch Incasso). Hiervoor hebben we een [betaalde](https://0100dev.nl/modules/whmcs#WHMCS%20Mollie%20Recurring) plugin. Deze plugins zijn niet afhankelijk van elkaar en kunnen naast elkaar opereren maar ook zonder elkaar.
 
 Compatible met **alle** WHMCS versies.
 
@@ -36,6 +36,6 @@ In deze release zijn de betaalmethodes KBC/CBC, ING Home'Pay, Giropay, Giftcards
 U kunt de files uploaden en simpelweg overschrijven (zie instructie bij Installatie), maar zorg wel dat u de oude Bancontact/Mistercash gateway uitschakeld en de nieuwe inschakeld als Bancontact.
 
 ### Support
-Support op basis van best-effort in Github via haar issuetracker. Business support (reactietijd van max. 24 uur, normaliter <1 uur) via ons [klantenpaneel](https://my.0100dev.nl/) tegen ons uurtarief a € 45,- excl. VAT. Maak een account aan en stuur via daar een ticket in.
+Support op basis van best-effort in Github via haar issuetracker. Business support (reactietijd van max. 24 uur, normaliter <1 uur) via ons [klantenpaneel](https://0100dev.nl/) tegen ons uurtarief a € 45,- excl. VAT. Maak een account aan en stuur via daar een ticket in.
 
 [Meer informatie via Mollie](https://www.mollie.nl/betaaldiensten/)
