@@ -5,7 +5,7 @@ Compatible with **alle** WHMCS versions that are supported by WHMCS.
 
 ### Installation
 + Log in to your (s)FTP.
-+ Download the `whmcs-mollie.tar.gz` from the [releases page](https://github.com/0100Dev/WHMCS-Mollie/releases) (**PLEASE NOTE:** **not** `Source code (zip)` or `Source code (tar.gz)`!).
++ Download the `WHMCS-Mollie-Payments.zip` from the [releases page](https://github.com/0100Dev/WHMCS-Mollie/releases) (**PLEASE NOTE:** **not** `Source code (zip)` or `Source code (tar.gz)`!).
 + Upload all the files from the `src` folder to the `/modules/gateways` folder in your WHMCS installation.
 
 ### Payment Methodes
