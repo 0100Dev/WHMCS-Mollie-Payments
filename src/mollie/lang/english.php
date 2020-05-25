@@ -23,3 +23,4 @@ $_GATEWAYLANG['payWithInghomepay'] = 'Pay with ING Home\'Pay';
 $_GATEWAYLANG['payWithKbc'] = 'Pay with KBC/CBC Payment Button';
 $_GATEWAYLANG['payWithPrzelewy24'] = 'Pay with Przelewy24';
 $_GATEWAYLANG['payWithApplepay'] = 'Pay with Apple Pay';
+$_GATEWAYLANG['payWith'] = 'Pay with Mollie';

@@ -13,7 +13,9 @@ All payment methods from Mollie are supported (which is also supported by their 
 
 Support for new payment methods must be added manually, due to the structure of this gateway. It can therefore take a while before a new payment method is supported. Is it urgent? Contact our paid support or add support for it yourself and contribute it back using a pull request.
 
+You can use `Mollie Checkout` to use the Mollie Payments checkout pages. In this case it'll use the Mollie Payments checkout screen and show all enabled payment methodes in your Mollie account.
+
 ### Support
 Support is best-effort through the Github issue tracker. Business support (responsetime within 24 hours, normally less then 1 hour) through our [website](https://0100dev.nl/) against our hourly rate at € 75,- excl. VAT. Please create an account at our website before contacting us.
 
-[More information through Mollie aobut Mollie Payments](https://www.mollie.com/en/payments)
+[More information through Mollie about Mollie Payments](https://www.mollie.com/en/payments)
