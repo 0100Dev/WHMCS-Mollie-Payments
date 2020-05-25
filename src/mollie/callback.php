@@ -31,6 +31,9 @@ if (isset($_POST['id'])) {
 
     $method = $transaction['method'];
 
+    if (empty($method)) {
+        $method = 'checkout';
+    }
 
     $_GATEWAY = getGatewayVariables('mollie' . $method . '_devapp');
 
