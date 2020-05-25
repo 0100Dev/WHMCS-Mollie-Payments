@@ -1,4 +1,4 @@
-# WHMCS Mollie Payments gateway
+# WHMCS Mollie Payments gateway ![GitHub All Releases](https://img.shields.io/github/downloads/0100Dev/WHMCS-Mollie-Payments/total) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/0100Dev/WHMCS-Mollie-Payments)
 Unofficial Mollie Payments gateway for WHMCS. This free gateway does NOT support Mollie Recurring, only Molie Payments. For Mollie Recurring we have a [paid](https://0100dev.nl/modules/whmcs#WHMCS%20Mollie%20Recurring) gateway. These gateways are not dependent on each other and can operate side by side, but also without each other.
 
 Compatible with **all** WHMCS versions that are [supported by WHMCS](https://docs.whmcs.com/Long_Term_Support#WHMCS_Version_.26_LTS_Schedule).
