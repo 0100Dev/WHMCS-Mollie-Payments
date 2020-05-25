@@ -1,5 +1,5 @@
 # WHMCS Mollie Payments gateway
-Unofficial Mollie Payments gateway for WHMCS. This free plugin does NOT support Mollie Recurring, only Molie Payments. For Mollie Recurring we have a [paid](https://0100dev.nl/modules/whmcs#WHMCS%20Mollie%20Recurring) gateway. These plugins are not dependent on each other and can operate side by side, but also without each other.
+Unofficial Mollie Payments gateway for WHMCS. This free gateway does NOT support Mollie Recurring, only Molie Payments. For Mollie Recurring we have a [paid](https://0100dev.nl/modules/whmcs#WHMCS%20Mollie%20Recurring) gateway. These gateways are not dependent on each other and can operate side by side, but also without each other.
 
 Compatible with **alle** WHMCS versions that are supported by WHMCS.
 
