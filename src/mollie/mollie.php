@@ -97,7 +97,8 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
                 'metadata' => array(
                     'invoice_id' => $params['invoiceid'],
                 ),
-                'issuer' => ((isset($_POST['issuer']) && !empty($_POST['issuer'])) ? $_POST['issuer'] : NULL)
+                'issuer' => ((isset($_POST['issuer']) && !empty($_POST['issuer'])) ? $_POST['issuer'] : NULL),
+                'dueDate' => (($method == \Mollie\Api\Types\PaymentMethod::BANKTRANSFER) ? date('Y-m-d', strtotime('+100 days')) : NULL),
             ));
 
             update_query('gateway_mollie', array('paymentid' => $payment->id), array('id' => $transactionId));
