@@ -1,0 +1,26 @@
+<?php
+
+$_GATEWAYLANG = array();
+
+$_GATEWAYLANG['selectBank'] = 'Wählen Sie Ihre Bank aus';
+
+$_GATEWAYLANG['errorTransactionNotFound'] = 'Die Transaktion konnte nicht gefunden werden. Bitte versuchen Sie es erneut.';
+
+$_GATEWAYLANG['checkPayment'] = 'Wir überprüfen Ihre Zahlung... Einen kurzen Moment!';
+
+$_GATEWAYLANG['payWithBanktransfer'] = 'Bezahlen Sie mit Überweisung';
+$_GATEWAYLANG['payWithBelfius'] = 'Bezahken Sie mit Belfius';
+$_GATEWAYLANG['payWithCreditcard'] = 'Bezahlen Sie mit Ihrer Kreditkarte';
+$_GATEWAYLANG['payWithIdeal'] = 'Bezahlten Sie mit iDeal';
+$_GATEWAYLANG['payWithBancontact'] = 'Bezahlen Sie mit Bancontact';
+$_GATEWAYLANG['payWithPaypal'] = 'Bezahlen Sie mit PayPal';
+$_GATEWAYLANG['payWithPaysafecard'] = 'Bezahlen Sie mit paysafecard';
+$_GATEWAYLANG['payWithSofort'] = 'Bezahlen Sie mit Sofortüberweisung';
+$_GATEWAYLANG['payWithEps'] = 'Bezahlen Sie mit EPS';
+$_GATEWAYLANG['payWithGiftcard'] = 'Bezahlen Sie mit Gutscheinen';
+$_GATEWAYLANG['payWithGiropay'] = 'Bezahlen Sie mit Giropay';
+$_GATEWAYLANG['payWithInghomepay'] = 'Bezahlen Sie mit ING Home\'Pay';
+$_GATEWAYLANG['payWithKbc'] = 'Bezahlen Sie mit dem KBC/CBC Payment Button';
+$_GATEWAYLANG['payWithPrzelewy24'] = 'Bezahlen Sie mit Przelewy24';
+$_GATEWAYLANG['payWithApplepay'] = 'Bezahlen Sie mit Apple Pay';
+$_GATEWAYLANG['payWith'] = 'Bezahlen Sie mit Mollie';
