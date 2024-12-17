@@ -97,7 +97,6 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
                 'metadata' => array(
                     'invoice_id' => $params['invoiceid'],
                 ),
-                'issuer' => ((isset($_POST['issuer']) && !empty($_POST['issuer'])) ? $_POST['issuer'] : NULL),
                 'dueDate' => (($method == \Mollie\Api\Types\PaymentMethod::BANKTRANSFER) ? date('Y-m-d', strtotime('+100 days')) : NULL),
             ));
 
@@ -107,18 +106,6 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
             exit();
         } else {
             $return = '<form action="viewinvoice.php?id=' . $params['invoiceid'] . '" method="POST">';
-
-            if ($method == \Mollie\Api\Types\PaymentMethod::IDEAL) {
-                $issuers = $mollie->methods->get('ideal', ['include' => 'issuers'])->issuers;
-
-                $return .= '<label for="issuer">' . $_GATEWAYLANG['selectBank'] . ':</label> ';
-
-                $return .= '<select name="issuer">';
-                foreach ($issuers as $issuer) {
-                    $return .= '<option value=' . htmlspecialchars($issuer->id) . '>' . htmlspecialchars($issuer->name) . '</option>';
-                }
-                $return .= '</select>';
-            }
 
             $return .= '<input type="submit" name="start" value="' . $_GATEWAYLANG['payWith' . ucfirst($method)] . '" /></form>';
 
