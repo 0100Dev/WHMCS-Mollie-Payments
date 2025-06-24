@@ -41,7 +41,13 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
     $tableCheckQuery = full_query('SHOW TABLES LIKE \'gateway_mollie\'');
 
     if (mysql_num_rows($tableCheckQuery) != 1) {
-        full_query('CREATE TABLE IF NOT EXISTS `gateway_mollie` (`id` int(11) NOT NULL AUTO_INCREMENT, `paymentid` varchar(15), `amount` double NOT NULL, `currencyid` int(11) NOT NULL, `ip` varchar(50) NOT NULL, `userid` int(11) NOT NULL, `invoiceid` int(11) NOT NULL, `status` ENUM(\'open\',\'paid\',\'closed\') NOT NULL DEFAULT \'open\', `method` VARCHAR(25) NOT NULL,  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, `updated` timestamp NULL DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `paymentid` (`paymentid`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;');
+        full_query('CREATE TABLE IF NOT EXISTS `gateway_mollie` (`id` int(11) NOT NULL AUTO_INCREMENT, `paymentid` varchar(64), `amount` double NOT NULL, `currencyid` int(11) NOT NULL, `ip` varchar(50) NOT NULL, `userid` int(11) NOT NULL, `invoiceid` int(11) NOT NULL, `status` ENUM(\'open\',\'paid\',\'closed\') NOT NULL DEFAULT \'open\', `method` VARCHAR(25) NOT NULL,  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, `updated` timestamp NULL DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `paymentid` (`paymentid`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;');
+    }
+
+    $paymentIdQuery = full_query("SHOW COLUMNS FROM `gateway_mollie` WHERE `Field` = 'paymentid' AND `Type` LIKE '%64%'");
+
+    if (mysql_num_rows($paymentIdQuery) == 0) {
+        full_query("ALTER TABLE `gateway_mollie` CHANGE `paymentid` `paymentid` VARCHAR(64);");
     }
 
     $mollie = new \Mollie\Api\MollieApiClient();
@@ -97,6 +103,7 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
                 'metadata' => array(
                     'invoice_id' => $params['invoiceid'],
                 ),
+                'issuer' => ((isset($_POST['issuer']) && !empty($_POST['issuer'])) ? $_POST['issuer'] : NULL),
                 'dueDate' => (($method == \Mollie\Api\Types\PaymentMethod::BANKTRANSFER) ? date('Y-m-d', strtotime('+100 days')) : NULL),
             ));
 
@@ -106,6 +113,18 @@ function mollie_link($params, $method = Mollie_API_Object_Method::IDEAL)
             exit();
         } else {
             $return = '<form action="viewinvoice.php?id=' . $params['invoiceid'] . '" method="POST">';
+
+            if ($method == \Mollie\Api\Types\PaymentMethod::IDEAL) {
+                $issuers = $mollie->methods->get('ideal', ['include' => 'issuers'])->issuers;
+
+                $return .= '<label for="issuer">' . $_GATEWAYLANG['selectBank'] . ':</label> ';
+
+                $return .= '<select name="issuer">';
+                foreach ($issuers as $issuer) {
+                    $return .= '<option value=' . htmlspecialchars($issuer->id) . '>' . htmlspecialchars($issuer->name) . '</option>';
+                }
+                $return .= '</select>';
+            }
 
             $return .= '<input type="submit" name="start" value="' . $_GATEWAYLANG['payWith' . ucfirst($method)] . '" /></form>';
 
